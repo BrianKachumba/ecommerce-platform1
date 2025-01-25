@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container">
+            <h1 class="logo">Usena</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="shop.html">Home</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="logout.html">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- User Profile Section -->
+    <section class="user-profile">
+        <div class="container">
+            <div class="profile-header">
+                <img src="https://via.placeholder.com/150" alt="Profile Picture" id="profile-picture">
+                <h2 id="user-name">User's Full Name</h2>
+                <p id="user-details">Gender: <span id="user-gender">Male</span> | Location: <span id="user-location">Nairobi, Kenya</span></p>
+            </div>
+            <div class="profile-actions">
+                <h3>Actions</h3>
+                <button id="upload-item-btn" class="btn">Upload Item</button>
+                <button id="view-history-btn" class="btn">View History</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upload Form Section -->
+    <section id="upload-form-section" class="hidden">
+        <div class="container">
+            <h3>Upload Your Product</h3>
+            <form id="upload-form">
+                <input type="text" id="product-name" placeholder="Product Name" required>
+                <textarea id="product-description" placeholder="Product Description" required></textarea>
+                <input type="number" id="product-price" placeholder="Price" required>
+                <input type="file" id="product-image" accept="image/*" required>
+                <button type="submit" class="btn">Upload</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- History Section -->
+    <section id="history-section" class="hidden">
+        <div class="container">
+            <h3>History</h3>
+            <h4>Uploaded Items</h4>
+            <ul id="uploaded-items-list">
+                <!-- Uploaded items will appear here -->
+            </ul>
+            <h4>Purchased Items</h4>
+            <ul id="purchased-items-list">
+                <!-- Purchased items will appear here -->
+            </ul>
+        </div>
+    </section>
+
+<!-- Personal Information Form (When no profile data is found) -->
+<section id="profile-setup">
+    <div class="container">
+        <h3>Complete Your Profile</h3>
+        <form id="profile-form">
+            <input type="text" id="profile-name-input" placeholder="Full Name" required>
+            <input type="text" id="profile-location-input" placeholder="Location" required>
+            <select id="profile-gender-input" required>
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+            <input type="file" id="profile-picture-input" accept="image/*">
+            <button type="submit" class="btn">Save Profile</button>
+        </form>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Usena. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="profile.js"></script>
+</body>
+</html>

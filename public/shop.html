@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usena - E-Commerce Platform</title>
+   
+    <link rel="stylesheet" href="shop.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container">
+            <h1 class="logo">Usena</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="#products">products</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="#about">About Us</a></li>
+                </ul>
+            </nav>
+            <div class="navbar-actions">
+               
+                <button id="cart-btn" class="btn" onclick="location.href='cart.html'">Cart (0)</button>
+                <button id="login-btn" class="btn" onclick="navigateToLogin()">Login</button>
+
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Welcome to Usena</h2>
+            <p>Discover, buy, and sell products all your farm products and tools in one place!</p>
+            <a href="#products" class="btn">Explore Products</a>
+        </div>
+    </section>
+
+    <!-- All Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2>All Products</h2>
+            <input type="text" id="search-bar" placeholder="Search products..." class="search-input">
+            <button id="search-btn" class="btn">Search</button>
+            <div id="product-list" class="product-list">
+                <!-- All Products will be rendered here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Upload Product Section -->
+    <section id="upload" class="upload hidden">
+        <div class="container">
+            <h2>Upload Your Product</h2>
+            <form id="upload-form">
+                <input type="text" id="product-name" placeholder="Product Name" required>
+                <textarea id="product-description" placeholder="Product Description" required></textarea>
+                <input type="number" id="product-price" placeholder="Price" required>
+                <input type="file" id="product-image" accept="image/*" required>
+                <button type="submit" class="btn">Upload</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Usena. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="#" class="social-icon">Facebook</a>
+                <a href="#" class="social-icon">Twitter</a>
+                <a href="#" class="social-icon">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Quantity Modal -->
+<div id="quantity-modal" class="modal hidden">
+    <div class="modal-content">
+        <span id="close-quantity-modal" class="close">&times;</span>
+        <h3>Specify Quantity</h3>
+        <input type="number" id="quantity-input" placeholder="Enter quantity" min="1" value="1">
+        <button id="confirm-action" class="btn">Confirm</button>
+    </div>
+</div>
+
+    <script src="app.js"></script>
+</body>
+</html>
