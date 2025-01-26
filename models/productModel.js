@@ -1,5 +1,5 @@
 // models/productModel.js
-const db = require('../config/db');
+const db = require('../db');
 
 // Get all products
 exports.getAll = () => {

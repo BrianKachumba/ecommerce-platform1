@@ -187,7 +187,7 @@
   <script>
     const signupForm = document.getElementById("signupForm");
 
-    signupForm.addEventListener("submit", (e) => {
+    signupForm.addEventListener("submit", async (e) => {
       e.preventDefault();
       
       const name = document.getElementById("name").value.trim();
@@ -205,10 +205,43 @@
         return;
       }
 
-      alert("Signup successful!");
 
-      // Redirect to profile page
-      window.location.href = "profile.html"; // Replace 'profile.html' with the actual profile page.
+      const userData = { 
+      name,
+      email,
+      password
+      }
+
+      try {
+        console.log("pressed");
+      const response = await fetch('http://localhost:5000/api/auth/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userData),
+      });
+
+      if (response.status === 200) {
+        const data = await response.json();
+        alert("Signup successful!");
+        
+        // Redirect to profile page if the signup is successful
+        window.location.href = "profile.html"; // Replace 'profile.html' with the actual profile page.
+        
+      }else{
+        const error = await response.json();
+        alert(`Error: ${error.message}`);
+        return;
+      }
+
+
+      
+    } catch (error) {
+      console.error("Error during signup:", error.message);
+      alert("Something went wrong. Please try again later.");
+    }
+
     });
   </script>
 </body>
